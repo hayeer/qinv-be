@@ -1,0 +1,22 @@
+services:
+    app:
+        build:
+            context: .
+            args:
+                - APP_PORT=${APP_PORT}
+        image: ${APP_ALIAS}:latest
+        container_name: ${APP_ALIAS}
+        restart: unless-stopped
+        env_file:
+            - .env
+        environment:
+            APP_ENV: production
+            APP_PORT: ${APP_PORT}
+        ports:
+            - "${APP_PORT}:${APP_PORT}"
+        healthcheck:
+            test: ["CMD", "node", "-e", "fetch('http://localhost:${APP_PORT}/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+            interval: 30s
+            timeout: 5s
+            retries: 3
+            start_period: 10s
