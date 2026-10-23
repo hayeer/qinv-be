@@ -1,7 +1,7 @@
 {
-    "name": "ts-hexagonal",
+    "name": "qinv-be",
     "version": "1.0.0",
-    "description": "ts-hexagonal boilerplate for backend app",
+    "description": "Backend app for Qinv",
     "main": "src/index.js",
     "scripts": {
         "dev": "tsx --watch ./src/main.ts",
@@ -14,6 +14,7 @@
     "devDependencies": {
         "@types/node": "^26.6.4",
         "@types/pg": "^8.23.1",
+        "kysely-ctl": "^0.22.0",
         "tsx": "^4.23.15",
         "typescript": "^7.0.2",
         "uvu": "^0.5.6"

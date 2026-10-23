@@ -1,10 +1,6 @@
 import { ColumnType, GeneratedAlways } from "kysely";
 
-export default interface Database {
-    users: UserTable;
-}
-
-interface UserTable {
+export interface UserTable {
     id: string;
     username: string;
     password: string;

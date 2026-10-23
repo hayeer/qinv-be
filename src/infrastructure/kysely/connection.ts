@@ -1,5 +1,5 @@
 import { Kysely, PostgresDialect } from "kysely";
-import Database from "./schema";
+import Database from "./schemas";
 import dbCollection from "../config/database";
 import { getenv } from "../util/common.helper";
 import { Pool } from "pg";
